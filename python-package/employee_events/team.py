@@ -50,7 +50,7 @@ class Team(QueryBase):
         #### YOUR CODE HERE
         sql_query = f"""
         SELECT
-            team_name,
+            team_name
         FROM {self.name}
         WHERE {self.name}_id = {id}
         """

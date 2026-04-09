@@ -23,7 +23,7 @@ class QueryMixin:
             with connect(db_path) as conn:
                 return pd.read_sql_query(sql_query, conn)
         except SQLError as e:
-            raise f"Unable to execute SQL Query: {e}"
+            raise Exception(f"Unable to execute SQL Query: {e}")
 
     # Define a method named `query`
     # that receives an sql_query as a string
@@ -39,7 +39,7 @@ class QueryMixin:
                 cursor.execute(sql_query)
                 return cursor.fetchall()
         except SQLError as e:
-            raise f"Unable to execute SQL Query: {e}"
+            raise Exception(f"Unable to execute SQL Query: {e}")
  
  # Leave this code unchanged
 def query(func):
